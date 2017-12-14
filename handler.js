@@ -14,9 +14,6 @@ function createEmailService(smtp) {
 
 module.exports.helloWorld = (event, context, callback) => {
   const opt = JSON.parse(event.options)
-  // console.log(event.options);
-  // console.log(event.content);
-  // console.log(opt.email_from);
 
   var smtp = JSON.parse(event.smtp);
 
@@ -25,7 +22,7 @@ module.exports.helloWorld = (event, context, callback) => {
 
   // Send Email
   const emailService = createEmailService(smtp)
-  console.log(smtp);
+
   var service = emailService.sendEmail(
     opt.email_from,
     opt.email_to,
