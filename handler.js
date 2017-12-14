@@ -25,7 +25,7 @@ module.exports.helloWorld = (event, context, callback) => {
 
   // Send Email
   const emailService = createEmailService(smtp)
-
+  console.log(smtp);
   var service = emailService.sendEmail(
     opt.email_from,
     opt.email_to,

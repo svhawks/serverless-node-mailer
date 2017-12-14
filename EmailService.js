@@ -16,7 +16,8 @@ class EmailService {
             let transporter = NodeMailer.createTransport({
                 host: this.smtpHost,
                 port: this.smtpPort,
-                secure: true,
+                secure: false,
+                tls: { ciphers: 'SSLv3' },
                 auth: {
                     user: this.smtpUsername,
                     pass: this.smtpPassword
@@ -48,6 +49,7 @@ class EmailService {
                       reject(error)
                     }
                     else {
+                        console.log('Message sent: %s', info.messageId);
                         resolve(info)
                     }
                 })
