@@ -1,7 +1,14 @@
 'use strict';
-
+const querystring = require('querystring')
 module.exports.helloWorld = (event, context, callback) => {
-  const body = JSON.parse(event.body);
+  // send json as row content
+  // const body = JSON.parse(event.body);
+  // console.log(body);
+  console.log("============================================================================================================>");
+  let data = Object.assign({}, querystring.parse(event.body), event.pathParameters, event.queryStringParameters)
+  console.log(data['from_email']);
+  // console.log(event.body.from_email);
+
 
   const response = {
     statusCode: 200,
@@ -9,7 +16,7 @@ module.exports.helloWorld = (event, context, callback) => {
       'Access-Control-Allow-Origin': '*', // Required for CORS support to work
     },
     body: JSON.stringify({
-      message: body
+      message: event.body
     }),
   };
 
