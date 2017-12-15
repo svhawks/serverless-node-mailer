@@ -26,7 +26,7 @@ module.exports.helloWorld = (event, context, callback) => {
   var service = emailService.sendEmail(
     opt.email_from,
     opt.email_to,
-    opt.subject,
+    event.subject,
     templateResult
   ).then((info) => {
       callback(null, info)
@@ -39,7 +39,7 @@ module.exports.helloWorld = (event, context, callback) => {
     statusCode: 200,
     headers: { 'Access-Control-Allow-Origin': '*' },
     body: JSON.stringify({
-      message: service
+      message: 'Success!'
     }),
   };
 

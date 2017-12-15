@@ -44,7 +44,6 @@ class EmailService {
                 // send mail with defined transport object
                 transporter.sendMail(mailOptions, (error, info) => {
                     if (error) {
-                      console.log("ERRORRRR")
                       console.log(error)
                       reject(error)
                     }
