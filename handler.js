@@ -12,7 +12,7 @@ function createEmailService(smtp) {
     return emailService
 }
 
-module.exports.helloWorld = (event, context, callback) => {
+module.exports.notifier = (event, context, callback) => {
   const opt = JSON.parse(event.options)
 
   var smtp = JSON.parse(event.smtp);

@@ -1,4 +1,4 @@
-service: notification-center-email-notifier
+service: notification-center-email
 
 # The `provider` block defines where your service will be deployed
 provider:
@@ -7,8 +7,8 @@ provider:
 
 # The `functions` block defines what code to deploy
 functions:
-  helloWorld:
-    handler: handler.helloWorld
+  notifier:
+    handler: handler.notifier
     # The `events` block defines how to trigger the handler.helloWorld code
     events:
       - http:
