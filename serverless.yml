@@ -1,4 +1,4 @@
-service: notification-center-mail-sender
+service: notification-center-mail-sender-v2
 
 # The `provider` block defines where your service will be deployed
 provider:

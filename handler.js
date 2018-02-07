@@ -19,6 +19,7 @@ module.exports.notifier = (event, context, callback) => {
   // Fill template with variables
   var template = Handlebars.compile(event.content);
   var templateContent = template(variables);
+
   // Fill subject with variables
   var subject = Handlebars.compile(event.subject);
   var templateSubject = subject(variables);
@@ -28,7 +29,6 @@ module.exports.notifier = (event, context, callback) => {
 
   // Parse smtp settings
   var smtp = JSON.parse(event.smtp);
-
 
   // Send Email
   const emailService = createEmailService(smtp)
