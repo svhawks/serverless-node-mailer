@@ -39,14 +39,13 @@ module.exports.notifier = (event, context, callback) => {
     templateSubject,
     templateContent,
     opt.cc,
-    opt.bcc
+    opt.bcc,
+    opt.reply_to
   ).then((info) => {
     let response = {
       statusCode: 200,
       headers: { 'Access-Control-Allow-Origin': '*' },
-      body: JSON.stringify({
-        message: info
-      }),
+      body: info
     };
     callback(null, response)
   })

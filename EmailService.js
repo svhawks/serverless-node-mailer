@@ -28,7 +28,7 @@ class EmailService {
     }
 
 
-    sendEmail(from, to, subject, body, cc, bcc) {
+    sendEmail(from, to, subject, body, cc, bcc, replyTo) {
         return this._smtpConnect()
         .then((transporter) => {
             return new Promise((resolve, reject) => {
@@ -38,6 +38,7 @@ class EmailService {
                     to: to, // list of receivers
                     cc: cc,
                     bcc: bcc,
+                    replyTo: replyTo,
                     subject: subject, // Subject line
                     text: body, // plain text body
                     html: body // html body
