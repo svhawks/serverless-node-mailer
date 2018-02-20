@@ -41,19 +41,21 @@ module.exports.notifier = (event, context, callback) => {
     opt.cc,
     opt.bcc
   ).then((info) => {
-    callback(null, info)
+    let response = {
+      statusCode: 200,
+      headers: { 'Access-Control-Allow-Origin': '*' },
+      body: JSON.stringify({
+        message: info
+      }),
+    };
+    callback(null, response)
   })
   .catch(error => {
-    callback(null, error)
+    let response = {
+      statusCode: 422,
+      headers: { 'Access-Control-Allow-Origin': '*' },
+      body: error
+    };
+    callback(null, response)
   })
-
-  const response = {
-    statusCode: 200,
-    headers: { 'Access-Control-Allow-Origin': '*' },
-    body: JSON.stringify({
-      message: 'Success!'
-    }),
-  };
-
-  callback(null, response);
 };
