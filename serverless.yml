@@ -3,12 +3,12 @@ service: notification-center-mail-sender-v2
 # The `provider` block defines where your service will be deployed
 provider:
   name: aws
-  profile: eb-deployer
+  profile: default
   runtime: nodejs6.10
   stage: prod
   region: us-east-1
   deploymentBucket:
-    name: com.leoapp.us-east-1.serverless
+    # name: 
     serverSideEncryption: AES256 # when using server-side encryption
 
 # The `functions` block defines what code to deploy
