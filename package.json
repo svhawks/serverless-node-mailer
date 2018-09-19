@@ -1,5 +1,5 @@
 {
-  "name": "node-email-serverless",
+  "name": "serverless-node-mailer",
   "version": "1.0.0",
   "description": "Send emails",
   "main": "handler.js",

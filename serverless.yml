@@ -1,4 +1,4 @@
-service: notification-center-mail-sender-v2
+service: serverless-node-mailer
 
 # The `provider` block defines where your service will be deployed
 provider:
@@ -16,10 +16,10 @@ functions:
   notifier:
     handler: handler.notifier
     # The `events` block defines how to trigger the handler.helloWorld code
-    events:
-      - http:
-          path: hello-world
-          method: post
-          cors: true
+    # events:
+    #   - http:
+    #       path: hello-world
+    #       method: post
+    #       cors: true
 plugins:
   - serverless-offline
