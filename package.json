@@ -4,17 +4,11 @@
   "description": "Send emails",
   "main": "handler.js",
   "dependencies": {
-    "content": "^4.0.5",
-    "cryptiles": "^4.1.2",
     "handlebars": "^4.0.11",
-    "hoek": "^5.0.4",
-    "lodash": "^4.17.11",
-    "nodemailer": "^4.4.1",
-    "restify": "^6.0.1",
-    "sshpk": "^1.14.2"
+    "nodemailer": "^4.4.1"
   },
   "devDependencies": {
-    "serverless-offline": "^3.16.0"
+    "serverless-offline": "^3.25.12"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
