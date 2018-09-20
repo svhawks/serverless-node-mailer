@@ -16,7 +16,7 @@ serverless deploy -s prod
   req_payload = {
     options:   { email_from: 'test@example.com', email_to: 'to-test@example.com' }.to_json,
     variables: { name: 'John', click_url: 'https://example.com' }.to_json,
-    smtp:      { address: 'smtp.gmail.com', port: "465", username: 'test', paasword: 'test' }.to_json,
+    smtp:      { address: 'smtp.gmail.com', port: "465", username: 'test', password: 'test' }.to_json,
     subject:   "Hi {{name}}! This is an email subject!",
     content:   "<p>HTML template with handlebars support. <a href="{{click_url}}">Click here</a></p>"
   }
